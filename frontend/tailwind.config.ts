@@ -6,7 +6,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
-
+      colors: {
+        "primary": "#edf2f8",
+        "secondary": "#313bac",
+        "black": "#030303",
+        "light-grey": "#e4e4e4"
+      }
     },
   },
   plugins: [],

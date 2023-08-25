@@ -1,10 +1,19 @@
 import './App.css'
+import { Navbar } from './components'
+import { About, Footer, Header, Skills, Work } from './container'
+
 
 function App() {
   return (
-    <>
-      <p className='text-3xl'>Starting another project</p>
-    </>
+    <main className='bg-primary font-mono'>
+      <Navbar />
+      <Header />
+      <About />
+      <Work />
+      <Skills />
+      <Work />
+      <Footer />
+    </main>
   )
 }
 
