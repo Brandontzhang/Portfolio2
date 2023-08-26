@@ -11,6 +11,12 @@ const config: Config = {
         "secondary": "#313bac",
         "black": "#030303",
         "light-grey": "#e4e4e4"
+      },
+      transitionProperty: {
+        'width': 'width'
+      },
+      backgroundImage: {
+        'sidenav': "url('./src/assets/sidenav-bg.svg')"
       }
     },
   },
