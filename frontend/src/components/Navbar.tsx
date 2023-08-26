@@ -13,7 +13,7 @@ const Navbar = () => {
     <nav className="fixed flex w-full items-center justify-between border bg-slate-100 backdrop-blur-sm">
       <div className="flex-start m-2 flex items-center justify-center">
         <img
-          className="aspect-[150px_160px] h-[50px] md:h-[75px]"
+          className="aspect-[150px_160px] h-[50px] md:h-[70px]"
           src={b_logo}
         ></img>
       </div>
