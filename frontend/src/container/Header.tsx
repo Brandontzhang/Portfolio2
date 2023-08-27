@@ -10,7 +10,7 @@ const Header = () => {
   const { isInView: circleInView } = useInView({ ref: circle });
 
   return (
-    <header className="flex min-h-fit w-full flex-col justify-evenly pt-28 md:flex-row md:pt-24 z-0">
+    <header className="flex h-fit min-h-screen w-full flex-col justify-evenly pt-28 md:flex-row md:pt-24 z-0">
       <section className="relative flex w-full flex-col items-center justify-center md:bottom-32 md:right-20">
         <FadeInTextbox className="z-20 m-4 flex h-fit w-fit flex-row items-center justify-end rounded-lg bg-slate-100 p-4 drop-shadow-lg">
           <span className="m-2 pr-6 text-3xl">👋</span>
@@ -28,7 +28,7 @@ const Header = () => {
         </FadeInTextbox>
       </section>
 
-      <section className="flex h-[500px] min-h-fit w-full items-center justify-center md:top-0">
+      <section className="flex h-[500px] min-h-fit md:h-screen w-full items-center justify-center md:top-0">
         <img className="z-10 min-h-fit min-w-fit md:scale-125" src={brandon} />
         <div
           ref={circle}
