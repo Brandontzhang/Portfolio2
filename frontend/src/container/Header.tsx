@@ -12,12 +12,12 @@ const Header = () => {
             <span className="m-2 pr-6 text-3xl">👋</span>
             <div className="flex flex-col justify-start">
               <p className="text-slate-600">Hello I am</p>
-              <p className="text-5xl">Brandon</p>
+              <p className="text-4xl sm:text-5xl">Brandon</p>
             </div>
           </FadeInTextbox>
 
           <FadeInTextbox className="m-4 flex h-fit w-fit flex-row items-center justify-end rounded-lg bg-slate-100 p-4 drop-shadow-lg">
-            <div className="flex flex-col items-start uppercase text-slate-600">
+            <div className="flex flex-col items-start uppercase text-sm sm:text-lg text-slate-600">
               <p>Full-Stack Web Developer</p>
               <p>Software Solutions Engineer</p>
             </div>
@@ -25,13 +25,13 @@ const Header = () => {
         </div>
 
         <div className="absolute left-96 top-40 z-0 hidden h-[250px] w-[250px] rounded-[50%] bg-gradient-to-br from-primary to-orange-300 drop-shadow-lg md:block" />
-        <div className="absolute bottom-96 right-96 z-0 hidden h-[25px] w-[25px] rounded-[50%] bg-gradient-to-br from-primary to-orange-300 drop-shadow-lg md:block" />
+        <div className="absolute bottom-96 right-96 z-0 hidden h-[50px] w-[50px] rounded-[50%] bg-gradient-to-br from-primary to-orange-300 drop-shadow-lg md:block" />
         <div className="absolute bottom-20 left-40 z-0 hidden h-[150px] w-[150px] rounded-[50%] bg-gradient-to-br from-primary to-orange-300 drop-shadow-lg md:block" />
       </section>
 
       <section className="flex h-[500px] min-h-fit w-full flex-[0.5] items-center justify-center md:top-0 md:h-screen">
-        <img className="z-30 min-h-fit min-w-fit md:scale-150" src={brandon} />
-        <FadeInCircle className="h-[480px] w-[480px] z-20" />
+        <img className="z-30 sm:min-h-fit sm:min-w-fit md:scale-150" src={brandon} />
+        <FadeInCircle className="h-[300px] w-[300px] sm:h-[480px] sm:w-[480px] z-20" />
       </section>
 
       <section className="relative flex w-full flex-row items-center justify-center md:flex-col md:overflow-hidden">
