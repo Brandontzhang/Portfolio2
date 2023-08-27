@@ -13,7 +13,7 @@ const FadeInCircle = (props: any) => {
       className={cn(
         className,
         "absolute rounded-[50%] bg-gradient-to-br from-primary to-orange-300 drop-shadow-lg",
-        isInView && `translate-y-0 opacity-100 transition-circle duration-1000 md:scale-150`,
+        isInView && `translate-y-0 opacity-100 transition-circle duration-1000 delay-300 md:scale-150`,
         !isInView && `translate-y-20 opacity-0`
       )}
     />

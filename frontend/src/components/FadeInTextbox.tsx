@@ -11,7 +11,7 @@ const FadeInTextbox = (props: any) => {
     <section
       ref={ref}
       className={cn(className, {
-        "translate-x-0 opacity-100 transition-all duration-700 ease-in":
+        "translate-x-0 opacity-100 transition-all delay-300 duration-700 ease-in":
           isInView,
         "-translate-x-12 opacity-0": !isInView,
       })}

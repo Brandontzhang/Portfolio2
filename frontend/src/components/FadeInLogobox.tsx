@@ -11,7 +11,8 @@ const FadeInLogobox = (props: any) => {
     <div
       ref={ref}
       className={cn(className, {
-        "tanslate-y-0 opacity-100 transition-circle duration-700 ease-in": isInView,
+        "tanslate-y-0 opacity-100 transition-circle delay-300 duration-700 ease-in":
+          isInView,
         "translate-y-10 opacity-0": !isInView,
       })}
     >
