@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header className="z-0 flex h-fit min-h-screen w-full flex-[0.5] flex-col justify-evenly pt-28 md:flex-row md:pt-24">
       <section className="relative flex w-full flex-col items-center justify-center md:bottom-32 md:right-20">
-        <div className="z-30 flex flex-col items-center md:items-start">
+        <div className="z-30 flex flex-col items-center md:items-start lg:scale-125">
           <FadeInTextbox className="m-4 flex h-fit w-fit flex-row items-center justify-end rounded-lg bg-slate-100 p-4 drop-shadow-lg">
             <span className="m-2 pr-6 text-3xl">👋</span>
             <div className="flex flex-col justify-start">
@@ -38,19 +38,19 @@ const Header = () => {
         <FadeInLogobox
           img={react}
           className={
-            "relative bottom-24 m-4 flex h-[75px] w-[75px] items-center justify-center rounded-full bg-slate-50 p-2 drop-shadow-lg md:bottom-10 md:right-10 z-20"
+            "relative bottom-24 m-4 flex h-[75px] w-[75px] items-center justify-center rounded-full bg-none sm:bg-slate-50 p-2 drop-shadow-lg md:bottom-10 md:right-10 z-20"
           }
         />
         <FadeInLogobox
           img={ts}
           className={
-            "relative m-4 flex h-[200px] w-[200px] items-center justify-center rounded-full bg-slate-50 drop-shadow-lg md:left-20 z-20"
+            "relative m-4 flex h-[200px] w-[200px] items-center justify-center rounded-full bg-none sm:bg-slate-50 drop-shadow-lg md:left-20 z-20"
           }
         />
         <FadeInLogobox
           img={css}
           className={
-            "relative bottom-24 m-4 flex h-[150px] w-[150px] items-center justify-center rounded-full bg-slate-50 p-2 drop-shadow-lg md:top-10 z-20"
+            "relative bottom-24 m-4 flex h-[150px] w-[150px] items-center justify-center rounded-full bg-none sm:bg-slate-50 p-2 drop-shadow-lg md:top-10 z-20"
           }
         />
 
