@@ -13,7 +13,8 @@ const config: Config = {
         "light-grey": "#e4e4e4"
       },
       transitionProperty: {
-        'width': 'width'
+        'width': 'width',
+        'circle': 'transform, opacity'
       },
       backgroundImage: {
         'sidenav': "url('./src/assets/sidenav-bg.svg')"

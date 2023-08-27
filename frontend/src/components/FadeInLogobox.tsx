@@ -11,12 +11,11 @@ const FadeInLogobox = (props: any) => {
     <div
       ref={ref}
       className={cn(className, {
-        "scale-100 transition-all duration-700 ease-in":
-          isInView,
-        "opacity-0": !isInView,
+        "tanslate-y-0 opacity-100 transition-circle duration-700 ease-in": isInView,
+        "translate-y-10 opacity-0": !isInView,
       })}
     >
-        <img className="object-scale-down" src={img} />
+      <img className="object-scale-down" src={img} />
     </div>
   );
 };
