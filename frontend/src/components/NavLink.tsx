@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { cn } from "../utils";
 
 const NavLink = (props : any) => {
-    const { link, className } = props;
+    const { link, className, keyName } = props;
     const [hover, setHover] = useState(false);
     const linkRef = useRef(null);
 
@@ -10,7 +10,7 @@ const NavLink = (props : any) => {
         <li className={cn('flex flex-col justify-center items-center m-4 w-20', className)}
             onMouseEnter={() => setHover(true)} 
             onMouseLeave={() => setHover(false)}  
-            key={`link-${link}`}>
+            key={`link-${link}-${keyName}`}>
             <a ref={linkRef} className="uppercase" href={`#${link}`}>{link}</a>
             <div className={cn(
                 "h-[2px]",

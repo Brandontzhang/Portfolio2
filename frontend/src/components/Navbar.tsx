@@ -19,7 +19,7 @@ const Navbar = () => {
       </div>
       <ul className="hidden flex-row md:flex">
         {links.map((link) => (
-          <NavLink link={link} />
+          <NavLink key={`${link}`} keyName="row" link={link} />
         ))}
       </ul>
       <div
@@ -46,7 +46,7 @@ const Navbar = () => {
         </div>
         <ul>
           {links.map((link) => (
-            <NavLink className="z-10 items-start justify-center" link={link} />
+            <NavLink key={`${link}`} keyName="col" className="z-10 items-start justify-center" link={link} />
           ))}
         </ul>
       </aside>
