@@ -1,25 +1,21 @@
-import { cn } from "../utils";
-
 const AboutCard = (props: any) => {
-  const { img, title, description, className } = props;
+  const { img, title, description } = props;
+
+  const dimensions = 250;
 
   return (
-    <section
-      style={{ gridTemplateRows: "repeat(8, 80px)" }}
-      className={cn(
-        className,
-        "m-4 grid grid-cols-1 items-center justify-items-center rounded-lg bg-slate-200 p-8 drop-shadow-lg xl:h-[672px]",
-      )}
-    >
-      <div className="row-span-5 my-auto h-fit max-h-[400px] w-full max-w-[400px] rounded-lg shadow-2xl">
+    <section className="flex flex-col justify-center items-center h-fit m-8 hover:scale-110 transition-all ease-in-out duration-500">
+      <div className={`h-fit max-h-[${dimensions}px] w-full max-w-[${dimensions}px] xl:max-h-[400px] xl:max-w-[400px] rounded-lg shadow-2xl`}>
         <img className="aspect-square rounded-lg" src={img} />
       </div>
-      <h3 className="row-span-1 my-auto flex h-full items-center justify-center text-2xl">
-        {title}
-      </h3>
-      <p className="row-span-2 m-auto h-full content-start justify-items-start overflow-hidden">
-        {description}
-      </p>
+      <div className={`flex flex-col justify-center items-start max-w-[${dimensions}px] xl:max-w-[400px]`}>
+        <h3 className="flex h-full text-2xl font-bold my-4">
+          {title}
+        </h3>
+        <p className="overflow-hidden">
+          {description}
+        </p>
+      </div>
     </section>
   );
 };
