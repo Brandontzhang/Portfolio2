@@ -20,3 +20,18 @@
    - Tailwind has different classes that apply transitions to different properties
       - transition-all: all properties that are changed
       - transition-opacity: only the opacity
+
+8/27 - CSS Grid, Subgrid
+1. Setting the display of the container to grid
+   - Grid-template-rows/columns: sets the amount of rows or columns and the amount of space they will take up
+      - the unit fr is a fraction of the space. (Ex. cols: 1fr 1fr divides the available space evenly into 2)
+      - use repeat(#, size) on template to set amount (doesn't exist in tailwind)
+      - If additional items are added that exceed the initial amount of rows/cols:
+         - the direction (row/col) can be added using grid-flow
+         - the size can be set using grid-col/row-auto
+   - Grid items can be placed on different rows/cols using grid-row/col
+      - Ex. grid-row: 1 / 3 (starts on the 1 edge and ends on the 3rd edge)
+      - Use span to disregard starting location (Ex. span 2, start from wherever you are and go 2 blocks)
+      - cols and rows combined into grid-area
+   - utilize the layout menu in the developer console to view grid layouts
+   - Use minmax function when declaring rows and cols to set minmax on resizing
