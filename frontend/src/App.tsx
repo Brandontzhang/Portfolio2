@@ -1,11 +1,12 @@
 import './App.css'
 import { Navbar } from './components'
 import { About, Footer, Header, Skills, Work } from './container'
+import AppWrap from './wrapper/AppWrap'
 
 
 function App() {
   return (
-    <main className='bg-primary font-mono'>
+    <AppWrap>
       <Navbar />
       <Header />
       <About />
@@ -13,7 +14,7 @@ function App() {
       <Skills />
       <Work />
       <Footer />
-    </main>
+    </AppWrap>
   )
 }
 

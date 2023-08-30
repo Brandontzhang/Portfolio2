@@ -10,7 +10,7 @@ export const useInView = (options : any) => {
                 const [entry] = entries;
                 setIsInView(entry.isIntersecting);
             },
-            { root: root ? root : null, rootMargin: '250px', threshold: 0.5}
+            { root: root ? root : null, rootMargin: '250px', threshold: .75}
         )
 
         if (ref.current) {
