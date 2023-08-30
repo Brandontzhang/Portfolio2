@@ -4,7 +4,7 @@ import { cn } from "../utils";
 
 const AboutCard = (props: any) => {
   const { img, title, description, index } = props;
-  const animationDelayTimes = ['delay-150','delay-200','delay-300','delay-500']
+  const animationDelayTimes = ['lg:delay-150','lg:delay-200','lg:delay-300','lg:delay-500']
   const dimensions = 250;
 
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -14,7 +14,7 @@ const AboutCard = (props: any) => {
     <section
       ref={sectionRef}
       className={cn(
-        "m-8 flex h-fit flex-col items-center justify-center transition-all dela duration-500 ease-in-out hover:scale-110 delay",
+        "m-8 flex h-fit flex-col items-center justify-center transition-all duration-500 ease-in-out hover:scale-110 hover:delay-0 hover:duration-500",
         isInView && `opacity-100 translate-y-0 transition-all duration-1000 ease-in-out`,
         !isInView && `opacity-0 translate-y-10 transition-all duration-1000 ease-in-out`,
         animationDelayTimes[index]
