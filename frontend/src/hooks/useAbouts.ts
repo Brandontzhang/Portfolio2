@@ -10,9 +10,7 @@ export const useAbouts = () => {
 
     const fetchData = async () => {
         try {
-            console.log(query);
             let data = await client.fetch(query);
-            console.log(data);
             setIsLoading(false);
             setData(data);
         } catch(err) {

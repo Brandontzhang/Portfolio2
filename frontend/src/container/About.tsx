@@ -32,13 +32,13 @@ const About = () => {
       </h2>
 
       <section className="my-4 grid h-fit grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:w-[80%]">
-        {abouts.map((about: About) => (
+        {abouts.map((about: About, index: number) => (
           <AboutCard
+            key={index}
             img={urlFor(about.imgUrl)}
             title={about.title}
-            description={
-              about.description
-            }
+            description={about.description}
+            index={index}
           />
         ))}
       </section>

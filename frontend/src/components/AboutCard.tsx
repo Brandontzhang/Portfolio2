@@ -1,20 +1,35 @@
-const AboutCard = (props: any) => {
-  const { img, title, description } = props;
+import { useRef } from "react";
+import { useInView } from "../hooks/useInView";
+import { cn } from "../utils";
 
+const AboutCard = (props: any) => {
+  const { img, title, description, index } = props;
+  const animationDelayTimes = ['delay-150','delay-200','delay-300','delay-500']
   const dimensions = 250;
 
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const { isInView } = useInView({ ref: sectionRef });
+
   return (
-    <section className="flex flex-col justify-center items-center h-fit m-8 hover:scale-110 transition-all ease-in-out duration-500">
-      <div className={`h-fit max-h-[${dimensions}px] w-full max-w-[${dimensions}px] xl:max-h-[400px] xl:max-w-[400px] rounded-lg shadow-2xl`}>
+    <section
+      ref={sectionRef}
+      className={cn(
+        "m-8 flex h-fit flex-col items-center justify-center transition-all dela duration-500 ease-in-out hover:scale-110 delay",
+        isInView && `opacity-100 translate-y-0 transition-all duration-1000 ease-in-out`,
+        !isInView && `opacity-0 translate-y-10 transition-all duration-1000 ease-in-out`,
+        animationDelayTimes[index]
+      )}
+    >
+      <div
+        className={`h-fit max-h-[${dimensions}px] w-full max-w-[${dimensions}px] rounded-lg shadow-2xl xl:max-h-[400px] xl:max-w-[400px]`}
+      >
         <img className="aspect-square rounded-lg" src={img} />
       </div>
-      <div className={`flex flex-col justify-center items-start max-w-[${dimensions}px] xl:max-w-[400px]`}>
-        <h3 className="flex h-full text-2xl font-bold my-4">
-          {title}
-        </h3>
-        <p className="overflow-hidden">
-          {description}
-        </p>
+      <div
+        className={`flex flex-col items-start justify-center max-w-[${dimensions}px] xl:max-w-[400px]`}
+      >
+        <h3 className="my-4 flex h-full text-2xl font-bold">{title}</h3>
+        <p className="overflow-hidden">{description}</p>
       </div>
     </section>
   );
