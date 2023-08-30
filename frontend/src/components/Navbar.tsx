@@ -40,7 +40,7 @@ const Navbar = () => {
         <img className="absolute -z-10 h-full object-cover" src={sidenav_bg} />
         <div
           onClick={() => setToggleMenu((toggleMenu) => !toggleMenu)}
-          className="relative left-[83%] top-4 text-3xl"
+          className="relative left-[75%] top-4 text-3xl"
         >
           <RxCross2 />
         </div>
