@@ -1,10 +1,8 @@
-import ProjectCard from "../components/ProjectCard";
+import ProjectCardCarousel from "../components/WorkSectionComponents/ProjectCardCarousel";
 import WorkTypeButton from "../components/WorkTypeButton";
 import { WorkTypeContextProvider } from "../context/WorkTypeContextProvider";
 import { useQuerySanity } from "../hooks/useQuerySanity";
 import { Project } from "../types";
-
-
 
 const Work = () => {
   const WorkTypes = ["Work", "Projects", "Web Apps", "All"];
@@ -15,7 +13,7 @@ const Work = () => {
 
   return (
     <WorkTypeContextProvider>
-      <section className="flex w-full flex-col items-center justify-center lg:mt-36">
+      <section className="flex w-full flex-col items-center justify-center lg:mt-36 overflow-hidden">
         <h2 className="flex w-full justify-center font-bold sm:text-xl">
           <span className="text-center text-[1.25rem] md:text-3xl lg:text-5xl">
             My <span className="text-orange-400">Work Experiences</span> and{" "}
@@ -33,9 +31,7 @@ const Work = () => {
           ))}
         </section>
 
-        <section className="flex flex-row w-[95dvw] overflow-x-scroll">
-          {projects.map(project => <ProjectCard key={project.name} project={project} />)}
-        </section>
+        <ProjectCardCarousel projects={projects} />
       </section>
     </WorkTypeContextProvider>
   );
