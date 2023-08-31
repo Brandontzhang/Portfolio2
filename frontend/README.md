@@ -35,3 +35,25 @@
       - cols and rows combined into grid-area
    - utilize the layout menu in the developer console to view grid layouts
    - Use minmax function when declaring rows and cols to set minmax on resizing
+
+8/29/23
+- TailWind: Tailwind doesn't allow for string interpolation (Ex. "bg-${backgroundColor}). TO have dynamic variables, use clsx and conditionals
+
+8/30/23
+- Sticky
+   - Stick works like normal positioning (static), until it is moved out of the container it is defined in. Then it behaves like a fixed element
+   - So trying to move an element within the container with left, right, top, and bottom, won't work (except bottom, but behavior isn't as expected)
+   - Use fixed if it is something like a HUD over the entire screen
+- Context
+   - Issues with normal use of context
+      - 1. Declaring variables to pass into the Provider creates clutter
+         - Create a custom ContextProvider class that initiates the initial variables, and export that to wrap around the components
+      - 2. Null checks for using the useContextHook
+         - This occurs if you use a context outside of the provider
+         - To avoid having to have null checks whenever you use the context, create a custom context hook that does the check for you and throws an error
+- Intersection Observer
+   - rootMargin - think of it as an expansion of the root (additional area that counts as in view outside of the root)
+   - threshold - percentage of the object that needs to be on the screen for it to be counted as in view (represented as a decimal)
+- Debugger
+   - Create a new device under the gear icon and devices, and add it as a Desktop device to have a screen without the touch mode
+      - Why was this so annoying to find???/
