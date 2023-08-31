@@ -4,8 +4,3 @@ export { default as react } from './react.png';
 export { default as css } from './css.png';
 export { default as ts } from './ts.png';
 export { default as brandon } from './brandon.png';
-export { default as ballroom } from './ballroom.png';
-export { default as backend } from './backend_dev.png';
-export { default as frontend}  from './frontend_dev.png';
-export { default as badminton } from './badminton.png';
-export { default as learning } from './learning.png';
