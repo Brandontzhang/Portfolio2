@@ -9,6 +9,11 @@ export default {
             type: 'string'
         },
         {
+            name: 'type',
+            title: 'title',
+            type: 'string'
+        },
+        {
             name: 'skills',
             title: 'Skills',
             type: 'array',
@@ -18,6 +23,14 @@ export default {
             name: 'desc',
             title: 'Desc',
             type: 'string'
+        },
+        {
+            name: 'imgUrl',
+            title: 'ImgUrl',
+            type: 'image',
+            options: {
+                hotspot: true,
+            }
         }
     ]
 }
