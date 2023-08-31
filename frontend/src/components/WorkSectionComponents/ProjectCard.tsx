@@ -1,18 +1,22 @@
 import { FaGithub } from "react-icons/fa";
 import { AiFillEye } from "react-icons/ai";
-import { urlFor } from "../client";
-import { Project } from "../types";
-import { cn } from "../utils";
+import { urlFor } from "../../client";
+import { Project } from "../../types";
+import { cn } from "../../utils";
 
 type ProjectCardPropsType = {
   project: Project;
+  className?: string
 };
 
-const ProjectCard = ({ project }: ProjectCardPropsType) => {
+const ProjectCard = ({ project, className }: ProjectCardPropsType) => {
   const { name, desc, imgUrl } = project;
 
   return (
-    <section className="relative m-4  w-[532px] flex-shrink-0 flex-col rounded-xl bg-slate-50 p-4">
+    <section className={cn(
+      className,
+      "m-4 w-[532px] flex-shrink-0 flex-col rounded-xl bg-slate-50 p-4"
+    )}>
       <div className="relative w-full flex justify-center items-center">
         <img
           className={
