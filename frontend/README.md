@@ -57,3 +57,6 @@
 - Debugger
    - Create a new device under the gear icon and devices, and add it as a Desktop device to have a screen without the touch mode
       - Why was this so annoying to find???/
+- Hover covers
+   - For adding effects with a hover, make changes to the item that ends up on top after the hover
+      - Change the display to cover the item
