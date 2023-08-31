@@ -12,7 +12,6 @@ function App() {
       <About />
       <Work />
       <Skills />
-      <Work />
       <Footer />
     </AppWrap>
   )
