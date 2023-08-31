@@ -13,7 +13,7 @@ const About = () => {
       <section className="flex flex-col items-center justify-center">
         <h2 className="flex flex-col items-center justify-center font-bold sm:text-xl">
           <p className="flex w-fit flex-col items-center">
-            <span className="m-4 text-sm text-blue-400 sm:text-3xl lg:text-5xl">
+            <span className="m-4 text-[1.25rem] text-blue-400 sm:text-3xl lg:text-5xl">
               Full-Stack Web Developer
             </span>
             <span className="m-4 text-sm sm:text-xl md:text-3xl">
@@ -22,7 +22,7 @@ const About = () => {
             </span>
             <span className="m-4">
               {highlightSkills.map((skill: string, index: number) => (
-                <span key={skill} className="text-sm text-blue-400 sm:text-3xl lg:text-5xl">
+                <span key={skill} className="text-[1.25rem] text-blue-400 sm:text-3xl lg:text-5xl">
                   {skill}
                   <span>{index === highlightSkills.length - 1 ? "" : `, `}</span>
                 </span>
