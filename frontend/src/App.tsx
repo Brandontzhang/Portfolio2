@@ -1,6 +1,7 @@
 import './App.css'
 import { Navbar } from './components'
-import { About, Footer, Header, Skills, Work } from './container'
+import { About, Footer, Header, Work } from './container'
+import SkillsAndExperience from './container/SkillsAndExperience'
 import AppWrap from './wrapper/AppWrap'
 
 
@@ -11,7 +12,7 @@ function App() {
       <Header />
       <About />
       <Work />
-      <Skills />
+      <SkillsAndExperience />
       <Footer />
     </AppWrap>
   )
