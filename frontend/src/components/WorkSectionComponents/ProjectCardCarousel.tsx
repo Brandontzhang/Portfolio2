@@ -10,13 +10,13 @@ type ProjectCardCarouselPropsType = {
 };
 const ProjectCardCarousel = ({ projects }: ProjectCardCarouselPropsType) => {
   const { workType } = useWorkTypeContext();
-  const [displayIndex, setDisplayIndex] = useState(projects.length / 2);
+  const [displayIndex, setDisplayIndex] = useState(0);
   const [displayProjects, setDisplayProjects] = useState(projects);
 
   useEffect(() => {
     filterProjectsNotMatchingSelectedWorkType();
     setDisplayIndex(0);
-  }, [workType]);
+  }, [workType, projects]);
 
   const filterProjectsNotMatchingSelectedWorkType = () => {
     setDisplayProjects(projects);
