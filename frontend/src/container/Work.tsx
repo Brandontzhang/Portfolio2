@@ -5,7 +5,7 @@ import { useQuerySanity } from "../hooks/useQuerySanity";
 import { Project } from "../types";
 
 const Work = () => {
-  const WorkTypes = ["Work", "Projects", "Web Apps", "All"];
+  const WorkTypes = ["Work", "Project", "Web App", "All"];
 
   const { data: projects } = useQuerySanity<Project>(
     `*[_type=="projects"] | order(_createdAt asc)`,
@@ -21,7 +21,7 @@ const Work = () => {
           </span>
         </h2>
 
-        <section className="flex w-[95dvw] justify-center overflow-x-auto whitespace-nowrap lg:my-40">
+        <section className="flex w-[95dvw] justify-center overflow-x-auto whitespace-nowrap">
           {WorkTypes.map((workType: string) => (
             <WorkTypeButton
               key={workType}

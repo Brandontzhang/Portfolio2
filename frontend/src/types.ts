@@ -6,6 +6,7 @@ export type About = {
 
 export type Project = {
     name: string,
+    types: string[],
     desc: string,
     imgUrl: string
 }

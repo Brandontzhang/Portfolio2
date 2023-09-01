@@ -1,15 +1,36 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Project } from "../../types";
 import ProjectCard from "./ProjectCard";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import { cn } from "../../utils";
+import useWorkTypeContext from "../../context/useWorkTypeContext";
 
 type ProjectCardCarouselPropsType = {
   projects: Project[];
 };
 const ProjectCardCarousel = ({ projects }: ProjectCardCarouselPropsType) => {
-  const center = Math.floor(projects.length / 2);
-  const [displayIndex, setDisplayIndex] = useState(center);
+  const { workType } = useWorkTypeContext();
+  const [displayIndex, setDisplayIndex] = useState(projects.length / 2);
+  const [displayProjects, setDisplayProjects] = useState(projects);
+
+  useEffect(() => {
+    filterProjectsNotMatchingSelectedWorkType();
+    setDisplayIndex(0);
+  }, [workType]);
+
+  const filterProjectsNotMatchingSelectedWorkType = () => {
+    setDisplayProjects(projects);
+
+    if (workType === "All") {
+      return;
+    }
+
+    setDisplayProjects((displayProjects) => {
+      return displayProjects.filter(
+        (project) => project.types && project.types.includes(workType),
+      );
+    });
+  };
 
   const getScale = (index: number) => {
     const distance = displayIndex - index;
@@ -32,7 +53,7 @@ const ProjectCardCarousel = ({ projects }: ProjectCardCarouselPropsType) => {
 
   const shiftDisplayIndex = (amount: number) => {
     const newIndex = displayIndex + amount;
-    if (newIndex > projects.length - 1 || newIndex < 0) {
+    if (newIndex > displayProjects.length - 1 || newIndex < 0) {
       return;
     } else {
       setDisplayIndex(newIndex);
@@ -40,9 +61,10 @@ const ProjectCardCarousel = ({ projects }: ProjectCardCarouselPropsType) => {
   };
 
   return (
-    <section className="relative -m-52 md:m-0 flex h-[850px] w-[100dvh] items-center justify-center scale-50 md:scale-100">
-      {projects.map((project: Project, index: number) => (
+    <section className="relative -m-52 flex h-[850px] w-[100dvh] scale-50 items-center justify-center md:m-0 md:scale-100">
+      {displayProjects.map((project: Project, index: number) => (
         <ProjectCard
+          key={project.name + index}
           className={cn(
             getScale(index),
             "absolute transition-all duration-1000 ease-in-out",

@@ -8,7 +8,7 @@ type ProjectCardPropsType = {
   project: Project;
   className?: string
 };
-
+//TODO: Figure out how to load in prettier when switching types
 const ProjectCard = ({ project, className }: ProjectCardPropsType) => {
   const { name, desc, imgUrl } = project;
 

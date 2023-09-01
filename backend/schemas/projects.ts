@@ -9,9 +9,10 @@ export default {
             type: 'string'
         },
         {
-            name: 'type',
-            title: 'title',
-            type: 'string'
+            name: 'types',
+            title: 'types',
+            type: 'array',
+            of: [{type:'string'}]
         },
         {
             name: 'skills',
