@@ -13,7 +13,7 @@ const NavigationDots = () => {
             key={link + index}
             className={cn(
               "m-4 h-[10px] w-[10px] rounded-full",
-              link === sectionContext.activeSection ? "bg-amber-800" : "bg-amber-300",
+              link === sectionContext.activeSection.toLowerCase() ? "bg-amber-800" : "bg-amber-300",
             )}
           />
         ))}
