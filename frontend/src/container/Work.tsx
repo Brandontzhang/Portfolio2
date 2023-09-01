@@ -1,5 +1,5 @@
 import ProjectCardCarousel from "../components/WorkSectionComponents/ProjectCardCarousel";
-import WorkTypeButton from "../components/WorkTypeButton";
+import WorkTypeButton from "../components/WorkSectionComponents/WorkTypeButton";
 import { WorkTypeContextProvider } from "../context/WorkTypeContextProvider";
 import { useQuerySanity } from "../hooks/useQuerySanity";
 import { Project } from "../types";

@@ -1,5 +1,5 @@
-import useWorkTypeContext from "../context/useWorkTypeContext";
-import { cn } from "../utils";
+import useWorkTypeContext from "../../context/useWorkTypeContext";
+import { cn } from "../../utils";
 
 type WorkTypeButtonProps = {
   className?: string;
