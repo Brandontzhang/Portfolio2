@@ -7,19 +7,19 @@ type WorkTypeButtonProps = {
 };
 
 const WorkTypeButton = ({ className, label }: WorkTypeButtonProps) => {
-    const { workType, setWorkType } = useWorkTypeContext();
+  const { workType, setWorkType } = useWorkTypeContext();
 
-    return (
+  return (
     <button
-        onClick={() => setWorkType(label)}
+      onClick={() => setWorkType(label)}
       className={cn(
         className,
         "m-4 rounded-xl border border-slate-200 bg-white p-4 px-6 font-bold drop-shadow-lg",
-        "hover:border-orange-300 hover:bg-orange-300 hover:text-white",
-        label === workType && "border-orange-300 bg-orange-300 text-white"
+        "hover:border-orange-400 hover:bg-orange-400 hover:text-white active:brightness-110",
+        label === workType && "border-orange-400 bg-orange-400 text-white",
       )}
     >
-        {label}
+      {label}
     </button>
   );
 };
