@@ -11,7 +11,7 @@ const About = () => {
   return (
     <SectionWrap sectionName={"about"}>
       <section className="flex flex-col items-center justify-center">
-        <h2 className="flex flex-col items-center justify-center font-bold sm:text-xl">
+        <h2 className="flex flex-col items-center justify-center font-bold sm:text-xl lg:my-20">
           <p className="flex w-fit flex-col items-center">
             <span className="m-4 text-[1.25rem] text-blue-400 sm:text-3xl lg:text-5xl">
               Full-Stack Web Developer
@@ -22,16 +22,21 @@ const About = () => {
             </span>
             <span className="m-4">
               {highlightSkills.map((skill: string, index: number) => (
-                <span key={skill} className="text-[1.25rem] text-blue-400 sm:text-3xl lg:text-5xl">
+                <span
+                  key={skill}
+                  className="text-[1.25rem] text-blue-400 sm:text-3xl lg:text-5xl"
+                >
                   {skill}
-                  <span>{index === highlightSkills.length - 1 ? "" : `, `}</span>
+                  <span>
+                    {index === highlightSkills.length - 1 ? "" : `, `}
+                  </span>
                 </span>
               ))}
             </span>
           </p>
           <div className="m-5 h-[5px] w-[55%] bg-slate-400" />
         </h2>
-        <section className="my-4 grid h-fit grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:w-[80%]">
+        <section className="grid h-fit grid-cols-1 sm:grid-cols-2 lg:mb-40 lg:mt-20 lg:grid-cols-4 xl:w-[80%]">
           {abouts.map((about: About, index: number) => (
             <AboutCard
               key={index}
