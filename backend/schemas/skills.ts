@@ -1,3 +1,5 @@
+import skillLevel from "./skillLevel";
+
 export default{
     name: 'skills',
     title: 'Skills',
@@ -9,9 +11,10 @@ export default{
             type: 'string'
         },
         {
-            name: 'bgColor',
-            title: 'BgColor',
-            type: 'string'
+            name: 'skilllevel',
+            title: 'Skill Level',
+            type: 'reference',
+            to: [{ type: 'skillLevel' }],
         },
         {
             name: 'icon',

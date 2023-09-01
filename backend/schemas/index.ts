@@ -3,6 +3,7 @@ import contact from "./contact";
 import experience from "./experience";
 import projects from "./projects";
 import skills from "./skills";
+import skillLevel from "./skillLevel";
 import workExperience from "./workExperience";
 
 export const schemaTypes = [
@@ -11,5 +12,6 @@ export const schemaTypes = [
     experience,
     projects,
     skills,
+    skillLevel,
     workExperience
 ]
