@@ -11,15 +11,15 @@ const WorkDetails = ({ work, className }: WorkDetailsPropsType) => {
         <div
             className={cn(
                 className,
-                "mb-10 text-2xl italic text-slate-500 text-center sm:text-start",
+                "mb-10 md:text-2xl italic text-slate-500 text-center sm:text-start",
             )}
         >
-            <h3 className="text-3xl font-bold not-italic text-slate-800">
+            <h3 className="text-2xl md:text-3xl font-bold not-italic text-slate-800">
                 {work.company}
             </h3>
             <p>{work.name}</p>
             {work.current ? (
-                <span className={work.current ? "" : "hidden"}>
+                <span className={work.current ? "text-orange-400" : "hidden"}>
                     Current Position
                 </span>
             ) : (
