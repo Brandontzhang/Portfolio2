@@ -3,44 +3,23 @@ import { urlFor } from "../client";
 import { useAbouts } from "../hooks/useAbouts";
 import { About } from "../types";
 import SectionWrap from "../wrapper/SectionWrap";
+import SectionHeader from "../components/SectionHeader";
 
 const About = () => {
-    const highlightSkills = ["Angular", "React", "TypeScript", "Java"];
     const { data: abouts } = useAbouts();
+    const highlightSkills = ["Angular", "React", "TypeScript", "Java"];
 
     return (
         <SectionWrap sectionName={"about"}>
             <section className="flex min-h-screen flex-col items-center justify-center bg-white">
-                <h2 className="flex flex-col items-center justify-center font-bold sm:text-xl lg:my-20">
-                    <p className="flex w-fit flex-col items-center">
-                        <span className="m-4 text-[1.25rem] text-blue-400 sm:text-3xl lg:text-5xl">
-                            Full-Stack Web Developer
-                        </span>
-                        <span className="m-4 text-sm sm:text-xl md:text-3xl">
-                            {" "}
-                            developing web applications using{" "}
-                        </span>
-                        <span className="m-4">
-                            {highlightSkills.map(
-                                (skill: string, index: number) => (
-                                    <span
-                                        key={skill}
-                                        className="text-[1.25rem] text-blue-400 sm:text-3xl lg:text-5xl"
-                                    >
-                                        {skill}
-                                        <span>
-                                            {index ===
-                                            highlightSkills.length - 1
-                                                ? ""
-                                                : `, `}
-                                        </span>
-                                    </span>
-                                ),
-                            )}
-                        </span>
+                <SectionHeader className="md:w-1/2">
+                    <p className="text-blue-600">Full-Stack Web Developer</p>
+                    <p>creating dynamic web applications with</p>
+                    <p className="text-blue-600">
+                        {highlightSkills.join(", ")}
                     </p>
-                    <div className="m-5 h-[5px] w-[55%] bg-slate-400" />
-                </h2>
+                </SectionHeader>
+
                 <section className="grid h-fit grid-cols-1 sm:grid-cols-2 lg:mb-40 lg:mt-20 lg:grid-cols-4 xl:w-[80%]">
                     {abouts.map((about: About, index: number) => (
                         <AboutCard

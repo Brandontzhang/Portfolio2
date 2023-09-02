@@ -1,3 +1,4 @@
+import SectionHeader from "../components/SectionHeader";
 import ProjectCardCarousel from "../components/WorkSectionComponents/ProjectCardCarousel";
 import WorkTypeButton from "../components/WorkSectionComponents/WorkTypeButton";
 import { WorkTypeContextProvider } from "../context/WorkTypeContextProvider";
@@ -15,16 +16,13 @@ const Work = () => {
     return (
         <SectionWrap sectionName="work">
             <WorkTypeContextProvider>
-                <section className="flex w-full flex-col items-center justify-center overflow-hidden min-h-screen">
-                    <h2 className="flex w-full justify-center font-bold sm:text-xl">
-                        <span className="text-center text-[1.25rem] md:text-3xl lg:text-5xl">
-                            <span className="text-orange-400">
-                                Work Experiences
-                            </span>{" "}
-                            and{" "}
-                            <span className="text-orange-400">Projects</span>
-                        </span>
-                    </h2>
+                <section className="flex min-h-screen w-full flex-col items-center justify-around overflow-hidden">
+                    <SectionHeader className="2xl:mb-0">
+                        <span className="text-orange-400">
+                            Work Experiences
+                        </span>{" "}
+                        and <span className="text-orange-400">Projects</span>
+                    </SectionHeader>
 
                     <section className="mt-5 flex w-[95dvw] justify-center overflow-x-auto whitespace-nowrap sm:mt-10">
                         {WorkTypes.map((workType: string) => (
