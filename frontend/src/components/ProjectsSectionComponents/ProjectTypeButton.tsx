@@ -1,12 +1,12 @@
 import useWorkTypeContext from "../../context/useWorkTypeContext";
 import { cn } from "../../utils";
 
-type WorkTypeButtonProps = {
+type ProjectTypeButtonProps = {
     className?: string;
     label: string;
 };
 
-const WorkTypeButton = ({ className, label }: WorkTypeButtonProps) => {
+const ProjectTypeButton = ({ className, label }: ProjectTypeButtonProps) => {
     const { workType, setWorkType } = useWorkTypeContext();
 
     return (
@@ -25,4 +25,4 @@ const WorkTypeButton = ({ className, label }: WorkTypeButtonProps) => {
     );
 };
 
-export default WorkTypeButton;
+export default ProjectTypeButton;

@@ -1,12 +1,12 @@
 import SectionHeader from "../components/SectionHeader";
-import ProjectCardCarousel from "../components/WorkSectionComponents/ProjectCardCarousel";
-import WorkTypeButton from "../components/WorkSectionComponents/WorkTypeButton";
+import ProjectCardCarousel from "../components/ProjectsSectionComponents/ProjectCardCarousel";
+import ProjectTypeButton from "../components/ProjectsSectionComponents/ProjectTypeButton";
 import { WorkTypeContextProvider } from "../context/WorkTypeContextProvider";
 import { useQuerySanity } from "../hooks/useQuerySanity";
 import { Project } from "../types";
 import SectionWrap from "../wrapper/SectionWrap";
 
-const Work = () => {
+const Projects = () => {
     const WorkTypes = ["Work", "Project", "Web App", "All"];
 
     const { data: projects } = useQuerySanity<Project>(
@@ -26,7 +26,7 @@ const Work = () => {
 
                     <section className="mt-5 flex w-[95dvw] justify-center overflow-x-auto whitespace-nowrap sm:mt-10">
                         {WorkTypes.map((workType: string) => (
-                            <WorkTypeButton
+                            <ProjectTypeButton
                                 key={workType}
                                 className="text-sm md:text-xl"
                                 label={workType}
@@ -44,4 +44,4 @@ const Work = () => {
     );
 };
 
-export default Work;
+export default Projects;
