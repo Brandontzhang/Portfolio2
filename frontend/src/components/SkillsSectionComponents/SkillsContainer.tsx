@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useQuerySanity } from "../../hooks/useQuerySanity";
 import { Skill, SkillLevel } from "../../types";
 import { cn } from "../../utils";
