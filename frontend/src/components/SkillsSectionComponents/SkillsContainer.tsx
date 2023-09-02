@@ -66,7 +66,7 @@ const SkillsContainer = ({ className }: SkillLevelContainerPropsType) => {
           </div>
         </section>
       );
-    }), [skillLevels])
+    }), [filteredSkills])
 
   return (
     <section className={cn(className)}>
