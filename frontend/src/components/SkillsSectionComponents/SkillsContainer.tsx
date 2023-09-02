@@ -54,8 +54,8 @@ const SkillsContainer = ({ className }: SkillLevelContainerPropsType) => {
           key={skillLevel.order}
           className="flex w-full flex-col items-center md:items-start"
         >
-          <h1 className="my-10 text-3xl">{skillLevel.name}</h1>
-          <div className="flex flex-row flex-wrap items-center justify-center gap-4 sm:gap-8">
+          <h1 className="my-10 text-3xl font-bold text-slate-800">{skillLevel.name}</h1>
+          <div className="flex flex-row flex-wrap w-full items-center justify-center gap-4 sm:gap-8">
             {skills.map((skill) => (
               <SkillLogoBubble
                 key={skill.name}
