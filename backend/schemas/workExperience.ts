@@ -19,6 +19,16 @@ export default {
             type: 'string'
         },
         {
+            name: 'current',
+            title: 'Current?',
+            type: 'boolean'
+        },
+        {
+            name: 'endDate',
+            title: 'End Date',
+            type: 'date'
+        },
+        {
             name: 'imgUrl',
             title: 'ImgUrl',
             type: 'image',
