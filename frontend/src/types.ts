@@ -24,12 +24,14 @@ export type SkillLevel = {
 
 export type Experience = {
     year: string,
-    work: Work[],
+    works: Work[],
 }
 
 export type Work = {
     name: string,
     company: string,
     desc: string,
+    current: boolean,
+    endDate: string,
     imgUrl: string
 }
