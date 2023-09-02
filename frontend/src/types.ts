@@ -35,3 +35,9 @@ export type Work = {
     endDate: string;
     imgUrl: string;
 };
+
+export type ContactFormInputs = {
+    name: string;
+    email: string;
+    message: string;
+};
