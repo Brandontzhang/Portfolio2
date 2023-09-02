@@ -1,6 +1,6 @@
 import "./App.css";
 import { Navbar } from "./components";
-import { About, Footer, Header, Projects } from "./container";
+import { About, Contact, Header, Projects } from "./container";
 import SkillsAndExperience from "./container/SkillsAndExperience";
 import AppWrap from "./wrapper/AppWrap";
 
@@ -12,7 +12,7 @@ function App() {
             <About />
             <Projects />
             <SkillsAndExperience />
-            <Footer />
+            <Contact />
         </AppWrap>
     );
 }
