@@ -3,7 +3,7 @@ import { cn } from "../utils";
 
 const NavigationDots = () => {
     const sectionContext = useSectionContext();
-    const links: string[] = ["home", "about", "work", "skills", "contact"];
+    const links: string[] = ["home", "about", "projects", "skills", "contact"];
 
     return (
         <section className="hidden md:block fixed right-0 bottom-[37%] z-40">
