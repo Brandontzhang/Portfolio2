@@ -8,7 +8,7 @@ type WorkDetailsPropsType = {
 
 const WorkDetails = ({ work, className }: WorkDetailsPropsType) => {
   return (
-    <div className={cn(className, "mb-10 text-2xl italic text-slate-500")}>
+    <div className={cn(className, "mb-10 text-2xl italic text-slate-500 text-center sm:text-start")}>
       <h3 className="text-3xl font-bold not-italic text-slate-800">
         {work.company}
       </h3>

@@ -10,7 +10,7 @@ const About = () => {
 
   return (
     <SectionWrap sectionName={"about"}>
-      <section className="flex flex-col items-center justify-center min-h-screen">
+      <section className="flex flex-col items-center justify-center min-h-screen bg-white">
         <h2 className="flex flex-col items-center justify-center font-bold sm:text-xl lg:my-20">
           <p className="flex w-fit flex-col items-center">
             <span className="m-4 text-[1.25rem] text-blue-400 sm:text-3xl lg:text-5xl">

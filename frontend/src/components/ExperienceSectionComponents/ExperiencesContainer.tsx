@@ -36,7 +36,7 @@ const ExperiencesContainer = ({ className }: ExperiencesContainerType) => {
               <h2 className="flex flex-[0.25] justify-center text-3xl font-bold text-amber-500">
                 {experience.year}
               </h2>
-              <div className="flex flex-1 flex-col">
+              <div className="flex flex-1 flex-col items-center sm:items-start">
                 {sortWorksByEndDate(experience.works).map((work) => (
                   <WorkDetails key={work.name} work={work} />
                 ))}

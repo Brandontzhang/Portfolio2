@@ -15,7 +15,7 @@ const Work = () => {
   return (
     <SectionWrap sectionName="work">
       <WorkTypeContextProvider>
-        <section className="flex w-full flex-col items-center justify-center overflow-hidden min-h-fit">
+        <section className="flex w-full flex-col items-center justify-center overflow-hidden min-h-screen">
           <h2 className="flex w-full justify-center font-bold sm:text-xl">
             <span className="text-center text-[1.25rem] md:text-3xl lg:text-5xl">
               <span className="text-orange-400">Work Experiences</span> and{" "}
