@@ -5,7 +5,9 @@ const useWorkTypeContext = () => {
     const workTypeContext = useContext(WorkTypeContext);
 
     if (!workTypeContext) {
-        throw new Error("useWorkTypeContext must be used within the WorkTypeContextProvider",);
+        throw new Error(
+            "useWorkTypeContext must be used within the WorkTypeContextProvider",
+        );
     }
 
     return workTypeContext;

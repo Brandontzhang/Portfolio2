@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
-export const useInView = (options : any) => {
+export const useInView = (options: any) => {
     const [isInView, setIsInView] = useState(false);
     const { root, ref } = options;
 
@@ -10,8 +10,8 @@ export const useInView = (options : any) => {
                 const [entry] = entries;
                 setIsInView(entry.isIntersecting);
             },
-            { root: root ? root : null, rootMargin: '0px', threshold: .5}
-        )
+            { root: root ? root : null, rootMargin: "0px", threshold: 0.5 },
+        );
 
         if (ref.current) {
             observer.observe(ref.current);
@@ -21,8 +21,8 @@ export const useInView = (options : any) => {
             if (ref.current) {
                 observer.unobserve(ref.current);
             }
-        }
+        };
     }, []);
 
     return { ref, isInView };
-}
+};

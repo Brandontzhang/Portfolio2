@@ -1,1 +1,1 @@
-export { default as SectionWrap } from './AppWrap';
+export { default as SectionWrap } from "./AppWrap";

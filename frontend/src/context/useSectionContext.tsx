@@ -5,7 +5,9 @@ const useSectionContext = () => {
     const sectionContext = useContext(SectionContext);
 
     if (!sectionContext) {
-        throw new Error("useSectionContext must be used within the SectionContextProvider");
+        throw new Error(
+            "useSectionContext must be used within the SectionContextProvider",
+        );
     }
 
     return sectionContext;
