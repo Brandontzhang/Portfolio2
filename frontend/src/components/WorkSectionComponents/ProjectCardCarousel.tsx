@@ -7,8 +7,9 @@ import useWorkTypeContext from "../../context/useWorkTypeContext";
 
 type ProjectCardCarouselPropsType = {
   projects: Project[];
+  className: string;
 };
-const ProjectCardCarousel = ({ projects }: ProjectCardCarouselPropsType) => {
+const ProjectCardCarousel = ({ className, projects }: ProjectCardCarouselPropsType) => {
   const { workType } = useWorkTypeContext();
   const [displayIndex, setDisplayIndex] = useState(0);
   const [displayProjects, setDisplayProjects] = useState(projects);
@@ -61,13 +62,13 @@ const ProjectCardCarousel = ({ projects }: ProjectCardCarouselPropsType) => {
   };
 
   return (
-    <section className="relative -m-52 flex h-[850px] w-[100dvh] scale-50 items-center justify-center md:m-0 md:scale-100">
+    <section className={cn(className)}>
       {displayProjects.map((project: Project, index: number) => (
         <ProjectCard
           key={project.name + index}
           className={cn(
             getScale(index),
-            "absolute transition-all duration-1000 ease-in-out",
+            "absolute transition-all duration-1000 ease-in-out drop-shadow-lg",
           )}
           project={project}
         />

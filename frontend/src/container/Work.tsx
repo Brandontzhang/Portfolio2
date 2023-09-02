@@ -15,10 +15,10 @@ const Work = () => {
   return (
     <SectionWrap sectionName="work">
       <WorkTypeContextProvider>
-        <section className="flex w-full flex-col items-center justify-center overflow-hidden min-h-screen">
+        <section className="flex w-full flex-col items-center justify-center overflow-hidden min-h-fit">
           <h2 className="flex w-full justify-center font-bold sm:text-xl">
             <span className="text-center text-[1.25rem] md:text-3xl lg:text-5xl">
-              My <span className="text-orange-400">Work Experiences</span> and{" "}
+              <span className="text-orange-400">Work Experiences</span> and{" "}
               <span className="text-orange-400">Projects</span>
             </span>
           </h2>
@@ -33,7 +33,7 @@ const Work = () => {
             ))}
           </section>
 
-          <ProjectCardCarousel projects={projects} />
+          <ProjectCardCarousel className="relative flex -m-40 sm:-m-0 lg:m-20 h-[850px] w-[100dvh] scale-50 sm:scale-75 items-center justify-center md:scale-100" projects={projects} />
         </section>
       </WorkTypeContextProvider>
     </SectionWrap>
