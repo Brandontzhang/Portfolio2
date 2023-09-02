@@ -10,7 +10,7 @@ const Navbar = () => {
   const links: string[] = ["Home", "About", "Work", "Skills", "Contact"];
 
   return (
-    <nav className="fixed flex w-full items-center justify-between border bg-slate-100 backdrop-blur-sm z-40">
+    <nav className="fixed z-40 flex w-full items-center justify-between border bg-slate-100 backdrop-blur-sm">
       <div className="flex-start m-2 flex items-center justify-center">
         <img
           className="aspect-[150px_160px] h-[50px] md:h-[70px]"
@@ -30,7 +30,7 @@ const Navbar = () => {
       </div>
       <aside
         className={cn(
-          "absolute md:hidden right-0 top-0 h-screen w-[40%] border border-slate-100 bg-gradient-to-b from-slate-100 via-slate-50 via-40%",
+          "absolute right-0 top-0 h-screen w-[41%] border border-slate-100 bg-gradient-to-b from-slate-100 via-slate-50 via-40% md:hidden",
           {
             "left-[60%] transition-all duration-500 ease-in-out": toggleMenu,
             "left-[100%] transition-all duration-500 ease-in-out": !toggleMenu,
@@ -46,7 +46,12 @@ const Navbar = () => {
         </div>
         <ul>
           {links.map((link) => (
-            <NavLink key={`${link}`} keyName="col" className="z-10 items-start justify-center" link={link} />
+            <NavLink
+              key={`${link}`}
+              keyName="col"
+              className="z-10 items-start justify-center"
+              link={link}
+            />
           ))}
         </ul>
       </aside>
