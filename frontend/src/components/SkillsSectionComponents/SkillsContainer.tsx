@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useQuerySanity } from "../../hooks/useQuerySanity";
 import { Skill, SkillLevel } from "../../types";
 import { cn } from "../../utils";
@@ -41,30 +41,36 @@ const SkillsContainer = ({ className }: SkillLevelContainerPropsType) => {
     });
   }, [skillLevels, skills]);
 
+  const renderedSkills = useMemo(() => 
+    skillLevels.map((skillLevel: SkillLevel) => {
+      let skills = filteredSkills[skillLevel.name];
+
+      if (!skills) {
+        return <span key={skillLevel.order}>loading...</span>;
+      }
+
+      return (
+        <section
+          key={skillLevel.order}
+          className="flex w-full flex-col items-center md:items-start"
+        >
+          <h1 className="my-10 text-3xl">{skillLevel.name}</h1>
+          <div className="flex flex-row flex-wrap items-center justify-center gap-8">
+            {skills.map((skill) => (
+              <SkillLogoBubble
+                key={skill.name}
+                className="scale-25 md:scale-90 lg:scale-100"
+                skill={skill}
+              />
+            ))}
+          </div>
+        </section>
+      );
+    }), [skillLevels])
+
   return (
     <section className={cn(className)}>
-      {skillLevels.map((skillLevel: SkillLevel) => {
-        let skills = filteredSkills[skillLevel.name];
-
-        if (!skills) {
-          return <span>loading...</span>;
-        }
-
-        return (
-          <section className="w-full flex flex-col items-center md:items-start">
-            <h1 className="text-3xl my-10">{skillLevel.name}</h1>
-            <div className="flex flex-row flex-wrap items-center justify-center gap-8">
-              {skills.map((skill) => (
-                <SkillLogoBubble
-                  key={skill.name}
-                  className="scale-25 md:scale-90 lg:scale-100"
-                  skill={skill}
-                />
-              ))}
-            </div>
-          </section>
-        );
-      })}
+      {renderedSkills}
     </section>
   );
 };
