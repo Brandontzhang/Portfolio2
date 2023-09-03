@@ -60,3 +60,10 @@
 - Hover covers
    - For adding effects with a hover, make changes to the item that ends up on top after the hover
       - Change the display to cover the item
+
+
+9/3/23
+- Organization:
+   - Container components should only contain css that is in charge of the positioning and layout
+   - Subcomponents take care of styling for appearance
+- Man gotta remember to use overflow
