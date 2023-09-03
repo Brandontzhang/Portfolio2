@@ -5,25 +5,24 @@ import { MdEmail } from "react-icons/md";
 import { MdOutlineClose } from "react-icons/md";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { cn } from "../utils";
-
-const MenuButton = (props: any) => {
-    return (
-        <div
-            onClick={props.onClick}
-            className={cn(
-                "m-4 transition-all duration-1000 ease-in-out hover:scale-125 hover:cursor-pointer hover:text-amber-600",
-                props.display && "opacity-100",
-                !props.display && "opacity-0"
-            )}
-        >
-            {props.children}
-        </div>
-    );
-};
+import { useQuerySanity } from "../hooks/useQuerySanity";
+import { Contact } from "../types";
 
 const SocialMediaButtons = () => {
+    const getMediaLinksQuery = `*[_type=="contact"]`;
+    const { data: contactMethods } = useQuerySanity<Contact>(getMediaLinksQuery);
     const [toggleTransition, setToggleTransition] = useState(true);
     const [menuOpen, setMenuOpen] = useState(true);
+
+    const getHrefFromContactInfo = (type : string) => {
+        const contactDetails = contactMethods.find(c => c.type === type);
+
+        if (contactDetails) {
+            return contactDetails.href;
+        }
+
+        return "";
+    }
 
     return (
         <section className="fixed bottom-10 z-40 md:text-3xl lg:left-10">
@@ -40,21 +39,45 @@ const SocialMediaButtons = () => {
                 {menuOpen && (
                     <>
                         <MenuButton display={toggleTransition}>
-                            <MdEmail />
+                            <a href={`mailto:${getHrefFromContactInfo("email")}`}>
+                                <MdEmail />
+                            </a>
                         </MenuButton>
                         <MenuButton display={toggleTransition}>
-                            <BsLinkedin />
+                            <a href={getHrefFromContactInfo("linkedin")}>
+                                <BsLinkedin />
+                            </a>
                         </MenuButton>
                         <MenuButton display={toggleTransition}>
-                            <FaGithub />
+                            <a href={getHrefFromContactInfo("github")}>
+                                <FaGithub />
+                            </a>
                         </MenuButton>
                     </>
                 )}
-                <MenuButton display={true} onClick={() => setToggleTransition((prev) => !prev)}>
+                <MenuButton
+                    display={true}
+                    onClick={() => setToggleTransition((prev) => !prev)}
+                >
                     {menuOpen ? <MdOutlineClose /> : <GiHamburgerMenu />}
                 </MenuButton>
             </div>
         </section>
+    );
+};
+
+const MenuButton = (props: any) => {
+    return (
+        <div
+            onClick={props.onClick}
+            className={cn(
+                "m-4 transition-all duration-1000 ease-in-out hover:scale-125 hover:cursor-pointer hover:text-amber-600",
+                props.display && "opacity-100",
+                !props.display && "opacity-0",
+            )}
+        >
+            {props.children}
+        </div>
     );
 };
 

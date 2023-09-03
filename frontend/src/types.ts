@@ -41,3 +41,8 @@ export type ContactFormInputs = {
     email: string;
     message: string;
 };
+
+export type Contact = {
+    type: string,
+    href: string
+}
