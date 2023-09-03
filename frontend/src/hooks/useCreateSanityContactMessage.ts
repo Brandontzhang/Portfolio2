@@ -10,7 +10,7 @@ export const useCreateSanityContactMessage = () => {
     const submitContactMessageToSanity = async ( data : ContactFormInputs) => {
         const { name, email, message } = data;
         const contact = {
-            _type: 'contact',
+            _type: 'message',
             name: name,
             email: email,
             message: message
