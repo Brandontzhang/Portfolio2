@@ -13,7 +13,7 @@ type ContactInputType = {
 
 const ContactInput = ({ className, register, label, placeholder, field, error } : ContactInputType ) => {
     return (
-        <div className={cn("flex flex-col", className)}>
+        <div className={cn("flex flex-col focus:drop-shadow-xl", className)}>
             <label className="my-4">{label}:</label>
             <input
                 className={cn("rounded-lg p-4 focus:outline-none", className)}
