@@ -1,17 +1,19 @@
 import about from "./about";
-import contact from "./contact";
+import message from "./message";
 import experience from "./experience";
 import projects from "./projects";
 import skills from "./skills";
 import skillLevel from "./skillLevel";
 import workExperience from "./workExperience";
+import contact from "./contact";
 
 export const schemaTypes = [
     about,
-    contact,
+    message,
     experience,
     projects,
     skills,
     skillLevel,
-    workExperience
+    workExperience,
+    contact
 ]

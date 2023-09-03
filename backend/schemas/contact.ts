@@ -1,22 +1,17 @@
 export default {
     name: 'contact',
-    title: 'Contact',
+    title: 'Contacts',
     type: 'document',
     fields: [
         {
-            name: 'name',
-            title: 'Name',
+            name: 'type',
+            title: 'Type',
             type: 'string'
         },
         {
-            name: 'email',
-            title: 'Email',
+            name: 'href',
+            title: 'href',
             type: 'string'
-        },
-        {
-            name: 'message',
-            title: 'Message',
-            type: 'text'
         }
     ]
 }
