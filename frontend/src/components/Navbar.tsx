@@ -7,7 +7,7 @@ import { cn } from "../utils";
 
 const Navbar = () => {
     const [toggleMenu, setToggleMenu] = useState(false);
-    const links: string[] = ["Home", "About", "Work", "Skills", "Contact"];
+    const links: string[] = ["Home", "About", "Projects", "Skills", "Contact"];
 
     return (
         <nav className="fixed z-40 flex w-full items-center justify-between border bg-slate-100 backdrop-blur-sm">

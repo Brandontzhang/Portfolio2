@@ -10,15 +10,31 @@ type PropsType = {
 };
 
 const SectionWrap = ({ children, sectionName, className }: PropsType) => {
-    const sectionRef = useRef(null);
+    const sectionRef = useRef<HTMLDivElement>(null);
     const { isInView } = useInView({ ref: sectionRef });
     const sectionContext = useSectionContext();
+
+    useEffect(() => {
+        sectionContext.setSectionNamesToScrollFunctions(prev => {
+            return {
+                ...prev,
+                [sectionName] : scrollToSection
+            }
+        })
+    }, []);
 
     useEffect(() => {
         if (isInView) {
             sectionContext.setActiveSection(sectionName);
         }
     }, [isInView]);
+
+    const scrollToSection = () => {
+        if (sectionRef.current) {
+            sectionRef.current.scrollIntoView({ behavior: "smooth" });
+        }
+    }
+
     return (
         <section
             className={cn(className, "flex min-h-screen w-full flex-col")}
