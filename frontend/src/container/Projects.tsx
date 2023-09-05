@@ -5,23 +5,24 @@ import { WorkTypeContextProvider } from "../context/WorkTypeContextProvider";
 import { useQuerySanity } from "../hooks/useQuerySanity";
 import { Project } from "../types";
 import SectionWrap from "../wrapper/SectionWrap";
+import { wave1 } from "../assets/images";
 
 const Projects = () => {
-    const WorkTypes = ["Work", "Project", "Web App", "All"];
-
     const { data: projects } = useQuerySanity<Project>(
         `*[_type=="projects"] | order(_createdAt asc)`,
     );
+
+    // TODO: pull WorkTypes from the projects query
+    const WorkTypes = ["Work", "Project", "Web App", "All"];
 
     return (
         <WorkTypeContextProvider>
             <SectionWrap
                 sectionName="projects"
-                className="items-center justify-around overflow-hidden"
+                className="relative items-center justify-around overflow-hidden"
             >
-                <SectionHeader className="2xl:mb-0">
-                    <span className="text-orange-400">Work Experiences</span>{" "}
-                    and <span className="text-orange-400">Projects</span>
+                <SectionHeader className="z-10 2xl:mb-0">
+                    <span>Work Experiences</span> & <span>Projects</span>
                 </SectionHeader>
 
                 <section className="mt-5 flex w-[95dvw] justify-center overflow-x-auto whitespace-nowrap sm:mt-10">
@@ -35,8 +36,13 @@ const Projects = () => {
                 </section>
 
                 <ProjectCardCarousel
-                    className="relative flex -m-40 sm:-m-0 lg:m-20 h-[850px] w-[100dvh] scale-50 sm:scale-75 items-center justify-center md:scale-100"
+                    className="relative z-10 -m-40 flex h-[850px] w-[100dvh] scale-50 items-center justify-center sm:-m-0 sm:scale-75 md:scale-100 lg:m-20"
                     projects={projects}
+                />
+
+                <img
+                    className="absolute left-0 right-0 top-0 h-full w-full object-cover"
+                    src={wave1}
                 />
             </SectionWrap>
         </WorkTypeContextProvider>

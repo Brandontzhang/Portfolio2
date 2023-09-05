@@ -12,7 +12,7 @@ const About = () => {
     return (
         <SectionWrap
             sectionName={"about"}
-            className="items-center justify-center bg-white"
+            className="items-center justify-center bg-gradient-to-b from-primary to-orange-200"
         >
             <SectionHeader className="md:w-1/2">
                 <p className="text-blue-600">Full-Stack Web Developer</p>

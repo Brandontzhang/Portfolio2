@@ -7,7 +7,7 @@ const SkillsAndExperience = () => {
     return (
         <SectionWrap
             sectionName={"skills"}
-            className="items-center justify-around bg-white"
+            className="relative items-center justify-around"
         >
             <SectionHeader>
                 <span className="font-bold">Skills &&nbsp;</span>
