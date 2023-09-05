@@ -9,6 +9,8 @@ export type Project = {
     types: string[];
     desc: string;
     imgUrl: string;
+    url: string,
+    github: string
 };
 
 export type Skill = {

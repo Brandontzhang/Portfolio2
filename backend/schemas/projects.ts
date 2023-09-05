@@ -32,6 +32,16 @@ export default {
             options: {
                 hotspot: true,
             }
-        }
+        },
+        {
+            name: 'url',
+            title: 'URL',
+            type: 'string'
+        },
+        {
+            name: 'github',
+            title: 'Github Repository',
+            type: 'string'
+        },
     ]
 }

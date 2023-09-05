@@ -10,7 +10,7 @@ type ProjectCardPropsType = {
 };
 //TODO: Figure out how to load in prettier when switching types
 const ProjectCard = ({ project, className }: ProjectCardPropsType) => {
-    const { name, desc, imgUrl } = project;
+    const { name, desc, imgUrl, url, github } = project;
 
     return (
         <section
@@ -19,7 +19,7 @@ const ProjectCard = ({ project, className }: ProjectCardPropsType) => {
                 "m-4 w-[532px] flex-shrink-0 flex-col rounded-xl bg-slate-50 p-4",
             )}
         >
-            <div className="relative w-full flex justify-center items-center">
+            <div className="relative flex w-full items-center justify-center">
                 <img
                     className={
                         "aspect-square h-[500px] w-[500px] rounded-full drop-shadow-lg"
@@ -28,15 +28,15 @@ const ProjectCard = ({ project, className }: ProjectCardPropsType) => {
                 />
                 <div
                     className={cn(
-                        "opacity-0 hover:opacity-100 absolute top-0 flex aspect-square h-[500px] w-[500px] flex-row items-center justify-around rounded-full bg-black bg-opacity-50 text-7xl text-white",
+                        "absolute top-0 flex aspect-square h-[500px] w-[500px] flex-row items-center justify-around rounded-full bg-black bg-opacity-50 text-7xl text-white opacity-0 hover:opacity-100",
                     )}
                 >
-                    <span className="cursor-pointer">
+                    {url && <a href={url}>
                         <AiFillEye />
-                    </span>
-                    <span className="cursor-pointer">
+                    </a>}
+                    {github && <a href={github}>
                         <FaGithub />
-                    </span>
+                    </a>}
                 </div>
             </div>
 

@@ -13,7 +13,6 @@ const Projects = () => {
         `*[_type=="projects"] | order(_createdAt asc)`,
     );
 
-    // TODO: pull WorkTypes from the projects query
     const [workTypes, setWorkTypes] = useState(new Set<string>(["All"]));
 
     useEffect(() => {
