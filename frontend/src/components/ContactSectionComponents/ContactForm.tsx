@@ -50,7 +50,7 @@ const ContactForm = () => {
 
     return (
         <form
-            className="text-md flex w-full flex-[0.8] flex-col items-center justify-around md:text-xl lg:text-2xl"
+            className="text-md flex w-full flex-1 flex-col items-center justify-around md:text-xl lg:text-2xl"
             onSubmit={handleSubmit(onSubmit)}
         >
             <ContactInput
