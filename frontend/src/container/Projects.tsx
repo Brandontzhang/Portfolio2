@@ -6,6 +6,7 @@ import { useQuerySanity } from "../hooks/useQuerySanity";
 import { Project } from "../types";
 import SectionWrap from "../wrapper/SectionWrap";
 import { wave1 } from "../assets/images";
+import { useEffect, useState } from "react";
 
 const Projects = () => {
     const { data: projects } = useQuerySanity<Project>(
@@ -13,7 +14,15 @@ const Projects = () => {
     );
 
     // TODO: pull WorkTypes from the projects query
-    const WorkTypes = ["Work", "Project", "Web App", "All"];
+    const [workTypes, setWorkTypes] = useState(new Set<string>(["All"]));
+
+    useEffect(() => {
+        projects.forEach((project) => {
+            if (project.types) {
+                setWorkTypes((prev) => new Set([...prev, ...project.types]));
+            }
+        });
+    }, [projects]);
 
     return (
         <WorkTypeContextProvider>
@@ -25,8 +34,8 @@ const Projects = () => {
                     <span>Work Experiences</span> & <span>Projects</span>
                 </SectionHeader>
 
-                <section className="mt-5 flex w-[95dvw] justify-center overflow-x-auto whitespace-nowrap sm:mt-10">
-                    {WorkTypes.map((workType: string) => (
+                <section className="z-10 mt-5 flex w-[95dvw] justify-center overflow-x-auto whitespace-nowrap sm:mt-10">
+                    {Array.from(workTypes).map((workType: string) => (
                         <ProjectTypeButton
                             key={workType}
                             className="text-sm md:text-xl"
