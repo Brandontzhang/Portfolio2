@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { SetStateAction, useEffect, useRef, useState } from "react";
 import { cn } from "../utils";
 import useSectionContext from "../context/useSectionContext";
 
@@ -6,6 +6,7 @@ type NavLinkProps = {
     link: string;
     className?: string;
     keyName: string;
+    setToggleMenu: React.Dispatch<SetStateAction<boolean>>;
 };
 
 const NavLink = (props: NavLinkProps) => {
@@ -26,6 +27,7 @@ const NavLink = (props: NavLinkProps) => {
         event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
     ) => {
         event.preventDefault();
+        props.setToggleMenu(false);
 
         const scrollToFunction: () => void =
             sectionContext.sectionNamesToScrollFunctions[link.toLowerCase()];

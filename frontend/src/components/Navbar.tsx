@@ -19,7 +19,7 @@ const Navbar = () => {
             </div>
             <ul className="hidden flex-row md:flex">
                 {links.map((link) => (
-                    <NavLink key={`${link}`} keyName="row" link={link} />
+                    <NavLink key={`${link}`} keyName="row" link={link} setToggleMenu={setToggleMenu} />
                 ))}
             </ul>
             <div
@@ -30,7 +30,7 @@ const Navbar = () => {
             </div>
             <aside
                 className={cn(
-                    "absolute right-0 top-0 h-screen w-[41%] border border-slate-100 bg-gradient-to-b from-slate-100 via-slate-50 via-40% md:hidden",
+                    "absolute right-0 top-0 h-screen w-[41%] bg-gradient-to-b from-slate-100 via-slate-50 via-40% md:hidden",
                     {
                         "left-[60%] transition-all duration-500 ease-in-out":
                             toggleMenu,
@@ -56,6 +56,7 @@ const Navbar = () => {
                             keyName="col"
                             className="z-10 items-start justify-center"
                             link={link}
+                            setToggleMenu={setToggleMenu}
                         />
                     ))}
                 </ul>
