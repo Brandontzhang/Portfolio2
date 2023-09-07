@@ -10,7 +10,7 @@ const Navbar = () => {
     const links: string[] = ["Home", "About", "Projects", "Skills", "Contact"];
 
     return (
-        <nav className="fixed z-40 flex w-full items-center justify-between border bg-slate-100 backdrop-blur-sm">
+        <nav className="fixed z-40 flex w-full items-center justify-between border bg-slate-100 backdrop-blur-sm bg-opacity-50">
             <div className="flex-start m-2 flex items-center justify-center">
                 <img
                     className="aspect-[150px_160px] h-[35px] md:h-[45px] md:m-4"
