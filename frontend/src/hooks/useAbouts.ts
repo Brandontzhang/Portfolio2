@@ -6,7 +6,7 @@ export const useAbouts = () => {
     const [data, setData] = useState([]);
     const [error, setError] = useState<any>();
 
-    const query: string = `*[_type=="abouts"] | order(_createdAt asc)`;
+    const query: string = `*[_type=="abouts"] | order(position asc)`;
 
     const fetchData = async () => {
         try {
