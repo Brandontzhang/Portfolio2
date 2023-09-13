@@ -71,7 +71,7 @@ const ProjectCardCarousel = ({
                     key={project.name + index}
                     className={cn(
                         getScale(index),
-                        "absolute transition-all duration-1000 ease-in-out drop-shadow-lg z-40",
+                        "absolute transition-all duration-1000 ease-in-out drop-shadow-lg",
                     )}
                     project={project}
                 />
