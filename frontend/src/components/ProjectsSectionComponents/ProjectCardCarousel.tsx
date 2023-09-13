@@ -71,20 +71,20 @@ const ProjectCardCarousel = ({
                     key={project.name + index}
                     className={cn(
                         getScale(index),
-                        "absolute transition-all duration-1000 ease-in-out drop-shadow-lg",
+                        "absolute transition-all duration-1000 ease-in-out drop-shadow-lg z-40",
                     )}
                     project={project}
                 />
             ))}
             <div className="absolute bottom-0 text-4xl">
                 <button
-                    className="z-50 px-4 text-5xl"
+                    className="relative z-50 px-4 text-5xl"
                     onClick={() => shiftDisplayIndex(-1)}
                 >
                     <AiOutlineLeft />
                 </button>
                 <button
-                    className="z-50 px-4 text-5xl"
+                    className="relative z-50 px-4 text-5xl"
                     onClick={() => shiftDisplayIndex(+1)}
                 >
                     <AiOutlineRight />

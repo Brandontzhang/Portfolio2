@@ -42,7 +42,7 @@ const ProjectCard = ({ project, className }: ProjectCardPropsType) => {
             </div>
 
             <div className="p-8">
-                <h1 className="text-3xl font-bold">{name}</h1>
+                <h1 className="text-3xl font-bold py-4">{name}</h1>
                 <p>{desc}</p>
             </div>
         </section>
