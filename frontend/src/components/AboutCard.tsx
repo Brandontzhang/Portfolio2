@@ -30,7 +30,7 @@ const AboutCard = (props: any) => {
             <div
                 className={`h-fit max-h-[${dimensions}px] w-full max-w-[${dimensions}px] rounded-lg shadow-2xl xl:max-h-[400px] xl:max-w-[400px]`}
             >
-                <img className="aspect-square rounded-lg" src={img} />
+                <img className="aspect-square rounded-lg" src={img} loading="lazy"/>
             </div>
             <div
                 className={`flex flex-col items-start justify-center max-w-[${dimensions}px] xl:max-w-[400px]`}

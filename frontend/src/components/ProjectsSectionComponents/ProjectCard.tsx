@@ -22,9 +22,10 @@ const ProjectCard = ({ project, className }: ProjectCardPropsType) => {
             <div className="relative flex w-full items-center justify-center">
                 <img
                     className={
-                        "aspect-square h-[500px] w-[500px] rounded-full drop-shadow-lg"
+                        "aspect-square h-[500px] w-[500px] rounded-full drop-shadow-lg object-cover"
                     }
                     src={urlFor(imgUrl)}
+                    loading="lazy"
                 />
                 <div
                     className={cn(
