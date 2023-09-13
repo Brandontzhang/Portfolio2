@@ -20,6 +20,11 @@ export default {
             options: {
                 hotspot: true,
             }
+        },
+        {
+            name: 'position',
+            title: 'Position',
+            type: 'number'
         }
     ]
 }
