@@ -27,8 +27,32 @@ export const useCreateSanityContactMessage = () => {
     const submitContactMessage = async(data : ContactFormInputs) => {
         setIsLoading(true);
         await submitContactMessageToSanity(data);
+        sendRequestForEmail(data); 
         setIsLoading(false);
         setIsMessageSubmitted(true);
+    }
+
+    const sendRequestForEmail = async(data : ContactFormInputs) => {
+        const url = `https://api.emailjs.com/api/v1.0/email/send`;
+        const reqBody = {
+            service_id: 'service_tas3xk7',
+            template_id: 'template_y7s4geu',
+            user_id: 'exk9PJ7CWBWuMxpr1',
+            template_params: {
+                from_name: data.name,
+                message: data.message,
+                reply_to: data.email
+            }    
+        }
+        const requestOptions = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(reqBody)
+        }
+
+        fetch(url, requestOptions);
     }
 
     return { isMessageSubmitted, isLoading, error, setIsMessageSubmitted, submitContactMessage };
