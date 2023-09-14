@@ -33,7 +33,7 @@ const Projects = () => {
                     <span>Work Experiences</span> & <span>Projects</span>
                 </SectionHeader>
 
-                <section className="z-10 mt-5 flex w-[95dvw] justify-center overflow-x-auto whitespace-nowrap sm:mt-10">
+                <section className="z-10 mt-5 flex w-[95%] overflow-x-auto whitespace-nowrap sm:mt-10 space-x-4">
                     {Array.from(workTypes).map((workType: string) => (
                         <ProjectTypeButton
                             key={workType}
